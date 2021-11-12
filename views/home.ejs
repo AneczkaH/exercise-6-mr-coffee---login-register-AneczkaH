@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <%- include('partials/head'); %>
+        <title>home</title>
+      
+    </head>
+    <body>
+        <%- include('partials/navLogout'); %>
+        
+        <h1 class="login_h1"><%=welcomeText %></h1> 
+        
+        <h2>All Schedules</h2> 
+        
+        <div class = "icon_calendar"> <i class="icon-calendar"></i>
+        
+            <a id= my_schedules href = /myschedules target="_blank">MY SCHEDULES</a>
+        </div>
+        
+        
+
+        <table class = "center">
+            <thead>
+                <tr>
+                   <th>User Name </th><th>Day</th><th>Start at</th> <th>End at</th> <th>More/delete</th>
+                </tr>
+             </thead>
+            
+            <tr>
+              <td></td><td> </td> <td></td> <td></td> <td></td> 
+              
+            </tr>
+          
+            
+         </table>
+
+
+
+
+
+
+
+        <%- include('partials/footer'); %>
+    </body>
+</html>

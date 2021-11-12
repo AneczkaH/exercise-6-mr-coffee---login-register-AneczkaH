@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head'); %>
+        <title>login</title>
+      
+    </head>
+    <body>
+        <%- include('partials/nav'); %>
+        <h1 class = "login_h1"><%=welcomeText %></h1>
+
+        
+            <div class = "icon_user"> <i class="icon-user"></i> </div>
+                
+            <form class = "grayBox_form" action="/login" name = "log_in_form" method="POST">
+					
+                <div class= "form_field_login">
+                    <label for = "email" class = "name_of_field"> ADRESS E-MAIL * </label>
+                    <input type = "email" class= "form_input_field_medium" id = "email" name = "email" required>
+                </div>
+
+                <div class= "form_field_login">
+                    <label for = "password" class = "name_of_field"> PASSWORD * </label>
+                    <input type = "password" class= "form_input_field_medium" id = "password" name = "password" required>
+                </div>
+                                      
+                <button type = "submit" class = "button_boxGray_small" id ="button_login"> LOGIN </button> 
+            </form>
+            <div class= register>
+                <p>Create an account</p>
+            
+                <div class = "icon_user_plus"> <i class="icon-user-plus"></i> </div>
+                <a href="/signup" ><button class = "button_boxGray_small"> REGISTER </button> </a>
+        
+            </div>
+                
+   
+
+        <%- include('partials/footer'); %>
+        
+    </body>
+</html>

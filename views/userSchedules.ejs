@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <%- include('partials/head'); %>
+</head>
+<body>
+    <%- include('partials/navLogout'); %>
+    
+        
+    <h1 class="login_h1">Schedules of {firstname}</h1> 
+    
+        <table class = "center">
+            <thead>
+            
+                <tr id= "user_data">
+                    <th>{firstname}</th><th>{lastname}</th> <th>{email}</th> 
+                </tr>
+                <tr>
+                    <th>Day</th><th>Start at</th> <th>End at</th> 
+                </tr>
+            </thead>
+        
+            <tr>
+                <td> schedule.day ></td> <td> schedule.start_at </td> <td> schedule.end_at ></td> 
+            </tr>
+        </table>
+
+
+
+    
+
+    <%- include('partials/footer'); %>
+</body>
+</html>

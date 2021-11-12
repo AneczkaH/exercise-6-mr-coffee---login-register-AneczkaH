@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <%- include('partials/head'); %>
+</head>
+<body>
+    <%- include('partials/navLogout'); %>
+    
+        
+    <h1 class="login_h1"><%-welcomeText%></h1> 
+   <div><a id= add_my_schedules href="" target="_blank">ADD NEW SCHEDULE</a>
+   </div> 
+   <section class="new_schedules_of_logged_user">
+        <form class = "grayBox_form" id="add_schedule_form" action="/schedules" name = "add_schedule_form" method="POST">
+					
+            <div class= "form_field_schedule" >
+                <label for = "day" class = "name_of_field">Day * </label>
+                <select id="day" class = "form_input_field_small" name="day">
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                    <option value="6">Saturday</option>
+                    <option value="7">Sunday</option>
+                  </select>
+                 
+            </div>
+                
+            <div class= "form_field_schedule">
+                <label for = "start_at" class = "name_of_field"> Start at * </label>
+                <input type = "time" class= "form_input_field_small" id = "start_at" name = "start_at" required>
+            </div>
+
+            <div class= "form_field_schedule">
+                <label for = "end_at" class = "name_of_field"> End at * </label>
+                <input type = "time" class= "form_input_field_small" id = "end_at" name = "end_at" required>
+            </div>
+                              
+            <button type = "submit" class = "button_boxGray_small" id ="button_add_schedule"> ADD NEW SCHEDULE </button> 
+        </form>
+    </section>
+
+    <section class = "schedules_of_logged_user">
+        <table class = "center">
+            <thead>
+            
+                <tr id= "user_data">
+                    <th>{firstname}</th><th>{lastname}</th> <th>{email}</th> 
+                </tr>
+                <tr>
+                    <th>Day</th><th>Start at</th> <th>End at</th> 
+                </tr>
+            </thead>
+        
+            <tr>
+                <td> schedule.day ></td> <td> schedule.start_at </td> <td> schedule.end_at ></td> 
+            </tr>
+        </table>
+        
+    </section>
+
+
+    <%- include('partials/footer'); %>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+    <title>Add User</title>
+</head> 
+<body>
+    <%- include('partials/nav'); %>
+    <h1 class = "login_h1"><%=welcomeText %></h1>
+
+    
+            <div class = "icon_user_plus" id = "user_plus_register"> <i class="icon-user-plus"></i> </div>
+                
+            <form class = "grayBox_form" id = "grayBox_form_register" action="/users" name = "register_form" method="POST">
+					
+                    <div class= "form_field_login" >
+                        <label for = "firstname" class = "name_of_field"> FIRST NAME * </label>
+                        <input type = "text" class= "form_input_field_medium"  id="firstname" name="firstname" maxlength="13" required>
+                        <!-- <p class = "invalid_feedback">The name cannot be without value.</p> -->
+                    </div>
+                    
+                    <div class= "form_field_login" >
+                        <label for = "lastname" class = "name_of_field">LAST NAME * </label>
+                         <input type = "text" class= "form_input_field_medium"  id="lastname" name="lastname" maxlength="20" required>
+                    </div>
+                    
+                    <div class= "form_field_login">
+                        <label for = "email" class = "name_of_field"> ADRESS E-MAIL * </label>
+                        <input type = "email" class= "form_input_field_medium" id = "email" name = "email" required>
+                    </div>
+
+                    <div class= "form_field_login">
+                        <label for = "password" class = "name_of_field"> PASSWORD * </label>
+                        <input type = "password" class= "form_input_field_medium" id = "password" name = "password" required>
+                    </div>
+
+                    <div class= "form_field_login">
+                        <label for = "confirm_password" class = "name_of_field"> CONFIRM PASSWORD * </label>
+                        <input type = "password" class= "form_input_field_medium" id = "confirm_password" name = "confirm_password" required>
+                    </div>
+      
+            
+                <button type = "submit" class = "button_boxGray_small" id ="button_register"> REGISTER </button> 
+            </form>
+        
+					
+     
+            
+    
+
+
+    <%- include('partials/footer'); %>
+</body>   
+</html>
+
