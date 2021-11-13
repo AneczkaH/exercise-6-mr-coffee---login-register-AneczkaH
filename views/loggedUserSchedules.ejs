@@ -3,16 +3,17 @@
 
 <head>
     <%- include('partials/head'); %>
+    <script src= "../node_modules/jquery/dist/jquery.js"></script>
 </head>
 <body>
     <%- include('partials/navLogout'); %>
     
         
-    <h1 class="login_h1"><%-welcomeText%></h1> 
-   <div><a id= add_my_schedules href="" target="_blank">ADD NEW SCHEDULE</a>
+    <h1 class="login_h1"><%=welcomeText%> <%=userData.firstname %></h1> 
+   <div><a id= "add_my_schedules" href="" target="_blank">ADD NEW SCHEDULE</a>
    </div> 
    <section class="new_schedules_of_logged_user">
-        <form class = "grayBox_form" id="add_schedule_form" action="/schedules" name = "add_schedule_form" method="POST">
+        <form class = "grayBox_form" id="add_schedule_form" action="/login/schedules" name = "add_schedule_form" method="POST">
 					
             <div class= "form_field_schedule" >
                 <label for = "day" class = "name_of_field">Day * </label>
@@ -30,7 +31,7 @@
                 
             <div class= "form_field_schedule">
                 <label for = "start_at" class = "name_of_field"> Start at * </label>
-                <input type = "time" class= "form_input_field_small" id = "start_at" name = "start_at" required>
+                <input type = "time"  class= "form_input_field_small" id = "start_at" name = "start_at" required>
             </div>
 
             <div class= "form_field_schedule">
@@ -47,16 +48,19 @@
             <thead>
             
                 <tr id= "user_data">
-                    <th>{firstname}</th><th>{lastname}</th> <th>{email}</th> 
+                    <th><%=userData.firstname %></th><th><%=userData.lastname %></th> <th><%=userData.email %></th> 
                 </tr>
                 <tr>
-                    <th>Day</th><th>Start at</th> <th>End at</th> 
+                    <th>Day</th><th>Start at</th> <th>End at</th> <th>Update</th><th>Delete</th>
                 </tr>
             </thead>
-        
+            <% userSchedules.forEach(function(schedule) { %>
             <tr>
-                <td> schedule.day ></td> <td> schedule.start_at </td> <td> schedule.end_at ></td> 
+                <td> <%= schedule.day %></td> <td> <%= schedule.start_at %> </td> <td> <%=schedule.end_at %></td> 
+                <td class = "icon_pencil_1"> <a href = "" id="update_schedule"><i class="icon-pencil-1"></i></a></td>
+                <td class = "icon_trash_2"> <a href = "" id="delete_schedule"><i class="icon-trash-2"></i></a></td>
             </tr>
+            <% }); %>
         </table>
         
     </section>
@@ -64,4 +68,10 @@
 
     <%- include('partials/footer'); %>
 </body>
+<script>
+    $('.new_schedules_of_logged_user').hide();
+    $('#add_my_schedules').on('click', () => {  
+    $('.new_schedules_of_logged_user').show();
+    });
+</script>
 </html>

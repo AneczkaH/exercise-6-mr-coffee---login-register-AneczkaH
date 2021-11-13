@@ -634,13 +634,15 @@ table, th, td {
 	
 	border-width: 1px;
 	margin-bottom: 30px;
-	width: 1300px;
+	width: 1200px;
 	border-collapse: collapse;
+	margin-right: 20px;
 	
   }
   table.center {
-	margin-left: 70px; 
-	margin-right: 70px;
+	margin: auto;
+	text-align: left;
+	margin-bottom: 40px;
 	
   }
   table thead {
@@ -672,6 +674,10 @@ table, th, td {
 	padding: 11px 25px;
 	margin-bottom: 20px;
 	}
+a#delete_schedule, #update_schedule {
+	text-decoration: none;
+	color: #6A7B8B 
+} 
 div.icon_calendar {
 	width: 1000px;
 	text-align: left;

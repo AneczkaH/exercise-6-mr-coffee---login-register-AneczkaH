@@ -9,7 +9,8 @@
         <%- include('partials/nav'); %>
         <h1 class = "login_h1"><%=welcomeText %></h1>
 
-        
+        <h2><%= message%></h>
+        <h2><%=errorText%></h>
             <div class = "icon_user"> <i class="icon-user"></i> </div>
                 
             <form class = "grayBox_form" action="/login" name = "log_in_form" method="POST">

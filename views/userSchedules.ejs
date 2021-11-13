@@ -8,22 +8,24 @@
     <%- include('partials/navLogout'); %>
     
         
-    <h1 class="login_h1">Schedules of {firstname}</h1> 
+    <h1 class="login_h1"><%=welcomeText %> <%=userSchedules[0].firstname%> <%=userSchedules[0].lastname%> </h1> 
     
         <table class = "center">
-            <thead>
             
+            <thead>
+                
                 <tr id= "user_data">
-                    <th>{firstname}</th><th>{lastname}</th> <th>{email}</th> 
+                    <th><%=userSchedules[0].firstname%></th><th><%=userSchedules[0].lastname%></th> <th><%=userSchedules[0].email %></th> 
                 </tr>
                 <tr>
                     <th>Day</th><th>Start at</th> <th>End at</th> 
                 </tr>
             </thead>
-        
+            <% userSchedules.forEach(function(schedule) { %>
             <tr>
-                <td> schedule.day ></td> <td> schedule.start_at </td> <td> schedule.end_at ></td> 
+                <td><%= schedule.day %></td> <td> <%=schedule.start_at %></td> <td> <%=schedule.end_at %></td> 
             </tr>
+            <% }); %>
         </table>
 
 

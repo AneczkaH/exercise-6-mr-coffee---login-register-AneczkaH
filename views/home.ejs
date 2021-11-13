@@ -9,13 +9,13 @@
     <body>
         <%- include('partials/navLogout'); %>
         
-        <h1 class="login_h1"><%=welcomeText %></h1> 
-        
+        <h1 class="login_h1"><%=welcomeText%> <%=userData.firstname %></h1> 
+        <h2><%=errorText%></h>
         <h2>All Schedules</h2> 
         
         <div class = "icon_calendar"> <i class="icon-calendar"></i>
         
-            <a id= my_schedules href = /myschedules target="_blank">MY SCHEDULES</a>
+            <a id= "my_schedules" href = "/login/schedules" target="_blank">MY SCHEDULES</a>
         </div>
         
         
@@ -26,13 +26,14 @@
                    <th>User Name </th><th>Day</th><th>Start at</th> <th>End at</th> <th>More/delete</th>
                 </tr>
              </thead>
-            
+             <% schedules.forEach(function(schedule) { %>
             <tr>
-              <td></td><td> </td> <td></td> <td></td> <td></td> 
+              <td><a href = "/users/<%=schedule.user_id%>/schedules"><%= schedule.firstname %>, <%= schedule.lastname %></a></td> <td><%= schedule.day %></td> <td><%= schedule.start_at %></td> 
+              <td><%= schedule.end_at %></td>  <td></td> 
               
             </tr>
           
-            
+            <% }); %>
          </table>
 
 

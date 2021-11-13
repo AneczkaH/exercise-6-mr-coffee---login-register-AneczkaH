@@ -8,10 +8,11 @@
     <%- include('partials/nav'); %>
     <h1 class = "login_h1"><%=welcomeText %></h1>
 
+    <p><%= errorText%></p>
     
             <div class = "icon_user_plus" id = "user_plus_register"> <i class="icon-user-plus"></i> </div>
                 
-            <form class = "grayBox_form" id = "grayBox_form_register" action="/users" name = "register_form" method="POST">
+            <form class = "grayBox_form" id = "grayBox_form_register" action="/signup" name = "register_form" method="POST">
 					
                     <div class= "form_field_login" >
                         <label for = "firstname" class = "name_of_field"> FIRST NAME * </label>
