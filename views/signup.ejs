@@ -32,7 +32,7 @@
 
                     <div class= "form_field_login">
                         <label for = "password" class = "name_of_field"> PASSWORD * </label>
-                        <input type = "password" class= "form_input_field_medium" id = "password" name = "password" required>
+                        <input type = "password" class= "form_input_field_medium" id = "password" name = "password" pattern="^([a-zA0-9]){8,}\b" required>
                     </div>
 
                     <div class= "form_field_login">
@@ -45,12 +45,12 @@
             </form>
         
 					
-     
-            
-    
+        
 
 
     <%- include('partials/footer'); %>
-</body>   
+        <script src ="../node_modules/jquery/dist/jquery.js"></script>
+        <script src = "/src/form.js"></script>
+    </body>   
 </html>
 

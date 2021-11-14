@@ -19,24 +19,24 @@
         </div>
         
         
-
-        <table class = "center">
-            <thead>
+        <section class = "schedules_all_users">   
+            <table class = "center">
+                <thead>
+                    <tr>
+                        <th>User Name </th><th>Day</th><th>Start at</th> <th>End at</th> 
+                    </tr>
+                </thead>
+                <% schedules.forEach(function(schedule) { %>
                 <tr>
-                   <th>User Name </th><th>Day</th><th>Start at</th> <th>End at</th> <th>More/delete</th>
+                    <td><a href = "/users/<%=schedule.user_id%>/schedules"><%= schedule.firstname %>, <%= schedule.lastname %></a></td>
+                    <td><%= schedule.day %></td> <td><%= schedule.start_at %></td> 
+                    <td><%= schedule.end_at %></td>   
                 </tr>
-             </thead>
-             <% schedules.forEach(function(schedule) { %>
-            <tr>
-              <td><a href = "/users/<%=schedule.user_id%>/schedules"><%= schedule.firstname %>, <%= schedule.lastname %></a></td> <td><%= schedule.day %></td> <td><%= schedule.start_at %></td> 
-              <td><%= schedule.end_at %></td>  <td></td> 
-              
-            </tr>
           
-            <% }); %>
-         </table>
+                <% }); %>
+            </table>
 
-
+        </section> 
 
 
 

@@ -634,6 +634,7 @@ table, th, td {
 	
 	border-width: 1px;
 	margin-bottom: 30px;
+	margin-top: 30px;
 	width: 1200px;
 	border-collapse: collapse;
 	margin-right: 20px;
@@ -643,6 +644,7 @@ table, th, td {
 	margin: auto;
 	text-align: left;
 	margin-bottom: 40px;
+	margin-top: 40px;
 	
   }
   table thead {
@@ -685,7 +687,8 @@ div.icon_calendar {
 	margin-left: 70px;
 }
 
-section.schedules_of_logged_user, section.new_schedules_of_logged_user {
+section.schedules_of_logged_user, section.new_schedules_of_logged_user, section.schedules_all_users {
+	
 	width: 1400px;
 	height: auto;
 	background-color: white;
@@ -708,7 +711,7 @@ form#add_schedule_form{
 
 }
 
-a#add_my_schedules {
+#add_my_schedules {
 	text-decoration: none;
 	background-color: #f44336;
 	font-family: "AvenirNext-Medium", sans-serif;

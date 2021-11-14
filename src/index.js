@@ -78,7 +78,7 @@ app.post('/signup', (req, res) => {
 
     pool.query(query, (dbErr, dbRes) => {
     if (dbErr === undefined) {
-      res.redirect('login', {message: 'Register success. Please Login', welcomeText: 'Welcome to login website', errorText:''});
+      res.render('login', {message: 'Register success. Please Login', welcomeText: 'Welcome to login website', errorText:''});
     } else if (dbErr.constraint === 'warunek') {
       console.log(dbErr);
       res.render('signup', { errorText: 'Provided email already exists', welcomeText: 'Welcome to register website'});
@@ -141,11 +141,21 @@ app.get('/home', (req, res) => {
 app.get('/login/schedules', (req, res) => {
     if(req.userData) {
         const userData = req.userData;
-        const query =`SELECT day, start_at, end_at FROM schedules WHERE user_id = ${userData.user_id}`;
+        const query =`SELECT schedule_id, day, start_at, end_at FROM schedules WHERE user_id = ${userData.user_id}`;
         pool.query(query, (dbErr, dbRes) => { 
             userSchedules = dbRes.rows;
     res.render('loggedUserSchedules', {welcomeText: 'Welcome ', userData: userData, userSchedules: dbRes.rows});
        });
+    }
+});
+
+app.get('/login/schedules/delete/:id', (req, res) => {
+    if(req.userData) {
+        const schedule_id = req.params.id;
+        const query = `DELETE FROM schedules WHere schedule_id = ${schedule_id}`;
+        pool.query(query, (dbErr, dbRes) => {
+            res.redirect('/login/schedules');
+        });
     }
 });
 
@@ -182,6 +192,16 @@ app.get('/users/:id/schedules', (req, res) => {
     },
    );
 });
+
+app.get('/logout', (req, res) => {
+    if(req.userData) {
+        res.clearCookie('AuthToken')
+        console.log ('kwiatek');
+        delete authTokens[req.cookies['AuthToken']];
+    }    
+    res.redirect ('/login');
+    
+});
  //   pool.query(
    //   `SELECT * FROM schedules WHERE user_id = ${user_id}`, (dbErr, dbRes) => {
      //   const userSchedules = dbRes.rows; 
@@ -189,6 +209,7 @@ app.get('/users/:id/schedules', (req, res) => {
  //     },
  //   );
   
+
 
 
 const port = 3000;
