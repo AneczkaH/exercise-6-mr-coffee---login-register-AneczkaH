@@ -1,24 +1,23 @@
 // when the page is ready the modal is hidden
 
-$('.new_schedules_of_logged_user').hide();
-//$('.modal').hide();
-//$('.invalid_feedback').hide();
+// $('.modal').hide();
+// $('.invalid_feedback').hide();
 
 // when click the btn id ="button_Envoyer"
 
-/*^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$
+/* ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$
 Ten regex wymusi następujące reguły:
 
 Co najmniej jedna wielka litera angielska ,(?=.*?[A-Z])
 Co najmniej jedna mała angielska litera, (?=.*?[a-z])
 Co najmniej jedna cyfra, (?=.*?[0-9])
 Co najmniej jedna postać specjalna, (?=.*?[#?!@$%^&*-])
-Minimalna długość ośmiu .{8,}(z kotwami)*/
+Minimalna długość ośmiu .{8,}(z kotwami) */
 
 function validateForm() {
   const firstname = document.forms.register_form.firstname.value;
   const lastname = document.forms.register_form.lastname.value;
-  const mail = document.forms.register_form.mail.value;
+  const mail = document.forms.register_form.email.value;
   const password = document.forms.register_form.password.value;
   const regFirstname = /^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]){3,13}\b/;
   const regLastname = /^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ.'-]){3,20}\b/;
@@ -44,7 +43,7 @@ function validateForm() {
   return true;
 }
 
-/*function invalidFeedback() {
+/* function invalidFeedback() {
   const telephone = document.forms.contact_form.telephone.value;
   const regTelephone = /^(\+\d{2})? ?\d{3}[- ]?\d{3}[- ]?\d{3}$/;
   if (telephone !== null && regTelephone.test(telephone) === false) {
@@ -56,31 +55,25 @@ function validateForm() {
   }
 } */
 
-
-    
-$('#add_my_schedules').on('click', () => {  
-    $('.new_schedules_of_logged_user').show();
-});
-
-//$('input#telephone').on('blur', invalidFeedback);
+// $('input#telephone').on('blur', invalidFeedback);
 
 // if field fill corect show the modal class="modal_content" and console log entered data in console
 // po przeniesieniu button do wnętrza <form> zmienić on na submit i dodać event.preventDefault();
 $('#button_register').on('click', () => {
+  alert('asda111');
   if (validateForm() === true) {
-      $('#grayBox_form_register').on('submit', function (event){
-        event.preventDefault();
-      });
-    
-    //$('.modal').fadeIn(400);
+    alert('asddf');
+    $('#grayBox_form_register').on('submit', (event) => {
+      event.preventDefault();
+    });
+
+    // $('.modal').fadeIn(400);
   } else {
     alert('Please fill correct data');
   }
 });
 
-// if field fill incorrect nothing happens
-
 // when click the btn (id ="button_fermer") hidde modal (class="modal_content")
-/*$('#button_fermer').on('click', () => {
+/* $('#button_fermer').on('click', () => {
   $('.modal').fadeOut(300);
 }); */

@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html lang="en"> 
-
-<head>
+<html lang="en">
+  <head>
     <%- include('partials/head'); %>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('partials/navLogout'); %>
-    
-        
-    <h1 class="login_h1"><%=welcomeText %> <%=userSchedules[0].firstname%> <%=userSchedules[0].lastname%> </h1> 
-    
-        <table class = "center">
-            
-            <thead>
-                
-                <tr id= "user_data">
-                    <th><%=userSchedules[0].firstname%></th><th><%=userSchedules[0].lastname%></th> <th><%=userSchedules[0].email %></th> 
-                </tr>
-                <tr>
-                    <th>Day</th><th>Start at</th> <th>End at</th> 
-                </tr>
-            </thead>
-            <% userSchedules.forEach(function(schedule) { %>
-            <tr>
-                <td><%= schedule.day %></td> <td> <%=schedule.start_at %></td> <td> <%=schedule.end_at %></td> 
-            </tr>
-            <% }); %>
-        </table>
 
-
-
-    
+    <h1 class="login_h1">
+      <%=welcomeText %> <%=userSchedules[0].firstname%>
+      <%=userSchedules[0].lastname%>
+    </h1>
+    <section class="schedules_all_users">
+      <table class="center">
+        <thead>
+          <tr id="user_data">
+            <th><%=userSchedules[0].firstname%></th>
+            <th><%=userSchedules[0].lastname%></th>
+            <th><%=userSchedules[0].email %></th>
+          </tr>
+          <tr>
+            <th>Day</th>
+            <th>Start at</th>
+            <th>End at</th>
+          </tr>
+        </thead>
+        <% userSchedules.forEach(function(schedule) { %>
+        <tr>
+          <td><%= schedule.day %></td>
+          <td><%=schedule.start_at %></td>
+          <td><%=schedule.end_at %></td>
+        </tr>
+        <% }); %>
+      </table>
+    </section>
 
     <%- include('partials/footer'); %>
-</body>
+  </body>
 </html>

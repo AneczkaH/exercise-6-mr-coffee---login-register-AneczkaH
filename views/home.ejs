@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <%- include('partials/head'); %>
-        <title>home</title>
-      
-    </head>
-    <body>
-        <%- include('partials/navLogout'); %>
-        
-        <h1 class="login_h1"><%=welcomeText%> <%=userData.firstname %></h1> 
-        <h2><%=errorText%></h>
-        <h2>All Schedules</h2> 
-        
-        <div class = "icon_calendar"> <i class="icon-calendar"></i>
-        
-            <a id= "my_schedules" href = "/login/schedules" target="_blank">MY SCHEDULES</a>
-        </div>
-        
-        
-        <section class = "schedules_all_users">   
-            <table class = "center">
-                <thead>
-                    <tr>
-                        <th>User Name </th><th>Day</th><th>Start at</th> <th>End at</th> 
-                    </tr>
-                </thead>
-                <% schedules.forEach(function(schedule) { %>
-                <tr>
-                    <td><a href = "/users/<%=schedule.user_id%>/schedules"><%= schedule.firstname %>, <%= schedule.lastname %></a></td>
-                    <td><%= schedule.day %></td> <td><%= schedule.start_at %></td> 
-                    <td><%= schedule.end_at %></td>   
-                </tr>
-          
-                <% }); %>
-            </table>
+  <head>
+    <%- include('partials/head'); %>
+    <title>home</title>
+  </head>
+  <body>
+    <%- include('partials/navLogout'); %>
 
-        </section> 
+    <h1 class="login_h1"><%=welcomeText%> <%=userData.firstname %></h1>
+    <h2><%=errorText%></h2>
+    <h2>All Schedules</h2>
 
+    <div class="icon_calendar">
+      <i class="icon-calendar"></i>
 
+      <a id="my_schedules" href="/login/schedules" target="_blank"
+        >MY SCHEDULES</a
+      >
+    </div>
 
+    <section class="schedules_all_users">
+      <table class="center">
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>Day</th>
+            <th>Start at</th>
+            <th>End at</th>
+          </tr>
+        </thead>
+        <% schedules.forEach(function(schedule) { %>
+        <tr>
+          <td>
+            <a href="/users/<%=schedule.user_id%>/schedules"
+              ><%= schedule.firstname %>, <%= schedule.lastname %></a
+            >
+          </td>
+          <td><%= schedule.day %></td>
+          <td><%= schedule.start_at %></td>
+          <td><%= schedule.end_at %></td>
+        </tr>
 
+        <% }); %>
+      </table>
+    </section>
 
-        <%- include('partials/footer'); %>
-    </body>
+    <%- include('partials/footer'); %>
+  </body>
 </html>
