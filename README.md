@@ -2,9 +2,9 @@
 exercise-6-mr-coffee---login-register-AneczkaH created by GitHub Classroom
 
 DONE
-
+POSTGRESQL - column " email" has constraints condition - uniqueEmail
 LOGIN
-SIGNUP
+SIGNUP - 
 LOGOUT
 HOME - all schedules with users (name is a link to link to user schedules)
 MY Schedules - page with schedules of the logged in user, logged user can delete owns schedules and add new ones
