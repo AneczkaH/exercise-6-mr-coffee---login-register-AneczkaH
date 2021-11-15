@@ -72,7 +72,7 @@ app.post('/signup', (req, res) => {
   pool.query(query, (dbErr, dbRes) => {
     if (dbErr === undefined) {
       res.render('login', { message: 'Register success. Please Login', welcomeText: 'Welcome to login website', errorText: '' });
-    } else if (dbErr.constraint === 'warunek') {
+    } else if (dbErr.constraint === 'uniqueEmail') {
       console.log(dbErr);
       res.render('signup', { errorText: 'Provided email already exists', welcomeText: 'Welcome to register website' });
     } else {

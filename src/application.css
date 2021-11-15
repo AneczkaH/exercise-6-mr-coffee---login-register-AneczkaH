@@ -477,18 +477,16 @@ div.icon_user{
 	margin-left: 315px;
 
 }
-.register {
-	width: 810px;
-	height: 300px;
-	background-color: white;
-	margin-left: 315px;
+a.createAccountlink {
+	font-family: 'AvenirNext-Bold', sans-serif; 
+	font-size:larger; 
+	text-decoration: none; 
+	text-align: center; 
+	cursor: pointer;
+	color:#5C5B5B; 
+
 }
 
-.register p {
-	font-family: 'AvenirNext-Bold', sans-serif; 
-	font-size: 26px;
-	color: #5C5B5B;
-}
 #grayBox_form_register{
 	height: 700px;
 	

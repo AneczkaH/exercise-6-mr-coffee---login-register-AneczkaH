@@ -1,10 +1,3 @@
-// when the page is ready the modal is hidden
-
-// $('.modal').hide();
-// $('.invalid_feedback').hide();
-
-// when click the btn id ="button_Envoyer"
-
 /* ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$
 Ten regex wymusi następujące reguły:
 
@@ -26,9 +19,6 @@ function validateForm() {
 
   if (/* name === null || */ regFirstname.test(firstname) === false) {
     alert('Fill correct name-only letters is ok');
-    /* allert najlepiej byloby zamienić na feedback z podpowiedzią
-    ewentualnie wpisywać jako error do tablicy i walidacje uzależnić
-    od tego czy jest coś w tablicy */
     return false;
   } if (/* surname === null || */ regLastname.test(lastname) === false) {
     alert('Fill correct surname-only letters is ok');
@@ -43,37 +33,12 @@ function validateForm() {
   return true;
 }
 
-/* function invalidFeedback() {
-  const telephone = document.forms.contact_form.telephone.value;
-  const regTelephone = /^(\+\d{2})? ?\d{3}[- ]?\d{3}[- ]?\d{3}$/;
-  if (telephone !== null && regTelephone.test(telephone) === false) {
-    $('.invalid_feedback').show();
-    $('#telephone.form_input_field').css('margin-bottom', '5px');
-  } else {
-    $('.invalid_feedback').hide();
-    $('#telephone.form_input_field').css('margin-bottom', '20px');
-  }
-} */
-
-// $('input#telephone').on('blur', invalidFeedback);
-
-// if field fill corect show the modal class="modal_content" and console log entered data in console
-// po przeniesieniu button do wnętrza <form> zmienić on na submit i dodać event.preventDefault();
 $('#button_register').on('click', () => {
-  alert('asda111');
+  
   if (validateForm() === true) {
-    alert('asddf');
-    $('#grayBox_form_register').on('submit', (event) => {
-      event.preventDefault();
-    });
-
-    // $('.modal').fadeIn(400);
   } else {
     alert('Please fill correct data');
   }
 });
 
-// when click the btn (id ="button_fermer") hidde modal (class="modal_content")
-/* $('#button_fermer').on('click', () => {
-  $('.modal').fadeOut(300);
-}); */
+
