@@ -431,6 +431,11 @@ button.button_boxGray {
 	
 }
 
+#button_register {
+	margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 h2.contact_heading {
 	text-align: center;
 	width: 458px;
@@ -488,7 +493,8 @@ a.createAccountlink {
 }
 
 #grayBox_form_register{
-	height: 700px;
+	height: auto;
+	margin-bottom: 20px;
 	
 }
 
@@ -504,6 +510,7 @@ div.form_field_login{
 	width: 404px;
 	height: 110px;
 	margin: auto;
+	margin-bottom: 5px;
 
 }
 input {
@@ -558,11 +565,12 @@ input {
 	font-weight: bold
 }
 
-.invalid_feedback {
+p.invalid_feedback {
 	color: red;
 	font-family: 'AvenirNext', sans-serif; 
 	font-size: 17px;
 	font-weight: bold;
+	
 }
 
 .modal {

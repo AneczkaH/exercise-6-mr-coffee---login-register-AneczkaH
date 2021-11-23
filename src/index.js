@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 
-const { Pool, Client } = require('pg');
+const { Pool } = require('pg');
 
 const pool = new Pool({
   database: 'mrcoffee_express',
@@ -59,7 +59,6 @@ app.post('/signup', (req, res) => {
   if (password !== confirm_password) {
     res.render('signup', {
       errorText: 'Password does not match.',
-      // messageClass: 'alert-danger'
     });
     return;
   }
@@ -71,12 +70,22 @@ app.post('/signup', (req, res) => {
 
   pool.query(query, (dbErr, dbRes) => {
     if (dbErr === undefined) {
-      res.render('login', { message: 'Register success. Please Login', welcomeText: 'Welcome to login website', errorText: '' });
+      res.render('login', {
+        message: 'Register success. Please Login',
+        welcomeText: 'Welcome to login website',
+        errorText: '',
+      });
     } else if (dbErr.constraint === 'uniqueEmail') {
-      console.log(dbErr);
-      res.render('signup', { errorText: 'Provided email already exists', welcomeText: 'Welcome to register website' });
+      // console.log(dbErr);
+      res.render('signup', {
+        errorText: 'Provided email already exists',
+        welcomeText: 'Welcome to register website',
+      });
     } else {
-      res.render('signup', { errorText: 'upps, someting goes wrong', welcomeText: 'Welcome to register website' });
+      res.render('signup', {
+        errorText: 'upps, someting goes wrong',
+        welcomeText: 'Welcome to register website',
+      });
     }
   });
 });
@@ -86,13 +95,17 @@ const authTokens = {};
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
+  // console.log(req.body);
   const query = `SELECT email, password, firstname, lastname, user_id FROM users WHERE email = '${email}' `;
-  console.log(query);
-  pool.query(query, (dbErr, dbRes) => {
-    const userData = dbRes.rows[0];
-    console.log(userData);
 
+  pool.query(query, (dbErr, dbRes) => {
+    // console.log(dbErr)
+
+    if (dbRes.rowCount === 0) {
+      res.render('login', { message: '', errorText: 'Incorect data try agin. Don\'t have account? Create new!', welcomeText: 'Welcome to login website' });
+    }
+    const userData = dbRes.rows[0];
+    // console.log(userData);
     const passwordCorrect = bcrypt.compareSync(password, userData.password);
 
     if (email === userData.email && passwordCorrect === true) {
@@ -101,8 +114,8 @@ app.post('/login', (req, res) => {
       res.cookie('AuthToken', authToken);
       res.redirect('home');
     } else if (email !== userData.email || passwordCorrect === false) {
-      console.log(dbErr);
-      res.render('login', { message: '', errorText: 'Incorect data try agin or if you don\'t have account create new', welcomeText: 'Welcome to login website' });
+      // console.log(dbErr);
+      res.render('login', { message: '', errorText: 'Incorect data try agin. Don\'t have account? Create new!', welcomeText: 'Welcome to login website' });
     } else {
       res.render('login', { message: '', errorText: 'upps, someting goes wrong', welcomeText: 'Welcome to login website' });
     }
@@ -112,7 +125,8 @@ app.post('/login', (req, res) => {
 app.get('/home', (req, res) => {
   if (req.userData) {
     pool.query(
-      `SELECT firstname, lastname, users.user_id,day, start_at, end_at FROM users
+      `SELECT firstname, lastname, users.user_id, day, to_char(start_at, 'HH24:MI') as start_at,
+      to_char(end_at, 'HH24:MI') as end_at  FROM users
         JOIN schedules ON users.user_id = schedules.user_id`, (dbErr, dbRes) => {
         res.render('home', {
           errorText: '', welcomeText: 'Welcome ', schedules: dbRes.rows, userData: req.userData,
@@ -127,13 +141,15 @@ app.get('/home', (req, res) => {
 app.get('/login/schedules', (req, res) => {
   if (req.userData) {
     const { userData } = req;
-    const query = `SELECT schedule_id, day, start_at, end_at FROM schedules WHERE user_id = ${userData.user_id}`;
+    const query = `SELECT schedule_id, day, to_char(start_at, 'HH24:MI') as start_at,
+    to_char(end_at, 'HH24:MI') as end_at FROM schedules WHERE user_id = ${userData.user_id}`;
     pool.query(query, (dbErr, dbRes) => {
-      userSchedules = dbRes.rows;
       res.render('loggedUserSchedules', {
         welcomeText: 'Welcome ', userData, userSchedules: dbRes.rows, errorText: '',
       });
     });
+  } else {
+    res.redirect('/home');
   }
 });
 
@@ -141,7 +157,7 @@ app.get('/login/schedules/delete/:id', (req, res) => {
   if (req.userData) {
     const schedule_id = req.params.id;
     const query = `DELETE FROM schedules WHere schedule_id = ${schedule_id}`;
-    pool.query(query, (dbErr, dbRes) => {
+    pool.query(query, () => {
       res.redirect('/login/schedules');
     });
   }
@@ -151,36 +167,35 @@ app.post('/login/schedules', (req, res) => {
   if (req.userData) {
     const { userData } = req;
     const { day, start_at, end_at } = req.body;
-    // const querySel = `SELECT schedule_id, day, to_char(start_at, 'HH24:MI') as start_at,
-    // to_char(end_at, 'HH24:MI') as end_at FROM schedules WHERE user_id = ${userData.user_id}`;
+    const querySel = `SELECT schedule_id, day, to_char(start_at, 'HH24:MI') as start_at,
+    to_char(end_at, 'HH24:MI') as end_at FROM schedules WHERE user_id = ${userData.user_id}`;
 
     const query = `INSERT INTO schedules (user_id, day, start_at, end_at)
-        VALUES('${userData.user_id}', '${day}', '${start_at}', '${end_at}')`;
-    // console.log(query);
+      VALUES('${userData.user_id}', '${day}', '${start_at}', '${end_at}')`;
 
-    /* pool.query(querySel, (dbErr, dbRes) => {
-            const schedules = dbRes.rows;
-            console.log(schedules);
-            let colision = false;
-            schedules.forEach ( (schedule) => {
-                const d = schedule.day.toString();
-                if( d === day/*schedules.find(schedule => schedule.day == Number(day))) {
-                    if (schedule.start_at < start_at && end_at > schedule.start_at || start_at > schedule.end_at && end_at > start) {
-                        colision = true;
-
-                    }
-
-                }
-            });
-            if (colision){
-                res.render('loggedUserSchedules',{welcomeText: 'Welcome ', userData: userData, userSchedules: dbRes.rows, errorText: 'The user is already on the schedule for that day'});
-            }
-            else { */
-    pool.query(query, (dbReq, dbRes) => {
-      res.redirect('/login/schedules');
+    pool.query(querySel, (dbErr, dbRes) => {
+      const schedules = dbRes.rows;
+      let noColision = true;
+      schedules.forEach((schedule) => {
+        const d = schedule.day.toString();
+        if (d === day) {
+          noColision = ((schedule.start_at > start_at) && (end_at < schedule.start_at) && (start_at < end_at))
+            || ((start_at > schedule.end_at) && (end_at > start_at));
+        }
+      });
+      if (noColision === true) {
+        pool.query(query, () => {
+          res.redirect('/login/schedules');
+        });
+      } else {
+        res.render('loggedUserSchedules', {
+          welcomeText: 'Welcome ',
+          userData,
+          userSchedules: dbRes.rows,
+          errorText: 'The user is already on the schedule for that day',
+        });
+      }
     });
-    // }
-    // });
   }
 });
 
@@ -188,13 +203,14 @@ app.get('/users/:id/schedules', (req, res) => {
   const user_id = req.params.id;
 
   pool.query(
-    `SELECT firstname, lastname, email, users.user_id,day, start_at, end_at FROM users
+    `SELECT firstname, lastname, email, users.user_id, day, to_char(start_at, 'HH24:MI') as start_at,
+    to_char(end_at, 'HH24:MI') as end_at FROM users
     JOIN schedules ON users.user_id = schedules.user_id WHERE users.user_id = ${user_id}`, (dbErr, dbRes) => {
       console.log(dbErr);
       console.log(dbRes);
 
       const userSchedules = dbRes.rows;
-      res.render('userSchedules', { welcomeText: 'Schedules of', userSchedules: dbRes.rows });
+      res.render('userSchedules', { welcomeText: 'Schedules of', userSchedules });
     },
   );
 });

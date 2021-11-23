@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('partials/head'); %>
-    <title>Add User</title>
+    <title>Sign Up</title>
   </head>
   <body>
     <%- include('partials/nav'); %>
@@ -29,8 +29,10 @@
           id="firstname"
           name="firstname"
           maxlength="13"
+          pattern="^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]){3,13}\b"
           required
         />
+        <p class = "invalid_feedback">Fill correct name! Only letters are ok</p>
       </div>
 
       <div class="form_field_login">
@@ -41,8 +43,10 @@
           id="lastname"
           name="lastname"
           maxlength="20"
+          pattern = "^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ.'-]){3,20}\b"
           required
         />
+        <p class = "invalid_feedback">Fill correct lastname! Only letters and ".'-" are ok</p>
       </div>
 
       <div class="form_field_login">
@@ -52,8 +56,10 @@
           class="form_input_field_medium"
           id="email"
           name="email"
+          pattern="^([a-z0-9_.-]+@[a-z0-9_.-]+\.[a-z]{2,4})"
           required
         />
+        <p class = "invalid_feedback">Fill correct email - should contain: min 6 characters, "@" and "."</p>
       </div>
 
       <div class="form_field_login">
@@ -66,6 +72,7 @@
           pattern="^([a-zA0-9]){8,}\b"
           required
         />
+        <p class = "invalid_feedback">The password should have 8 characters</p>
       </div>
 
       <div class="form_field_login">
@@ -79,6 +86,7 @@
           name="confirm_password"
           required
         />
+        <p class = "invalid_feedback">The password should be the same!</p>
       </div>
 
       <button type="submit" class="button_boxGray_small" id="button_register">

@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <%- include('partials/head'); %>
+    <title>User schedules</title>
   </head>
   <body>
     <%- include('partials/navLogout'); %>
@@ -14,9 +15,11 @@
       <table class="center">
         <thead>
           <tr id="user_data">
-            <th><%=userSchedules[0].firstname%></th>
-            <th><%=userSchedules[0].lastname%></th>
-            <th><%=userSchedules[0].email %></th>
+            <th colspan="3"> User name: <%=userSchedules[0].firstname%>
+               <%=userSchedules[0].lastname%> </th>
+          </tr>
+          <tr id="user_data">
+            <th colspan="3"> E-mail: <%=userSchedules[0].email %></th>
           </tr>
           <tr>
             <th>Day</th>

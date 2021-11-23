@@ -7,38 +7,49 @@ Co najmniej jedna cyfra, (?=.*?[0-9])
 Co najmniej jedna postać specjalna, (?=.*?[#?!@$%^&*-])
 Minimalna długość ośmiu .{8,}(z kotwami) */
 
-function validateForm() {
-  const firstname = document.forms.register_form.firstname.value;
-  const lastname = document.forms.register_form.lastname.value;
-  const mail = document.forms.register_form.email.value;
-  const password = document.forms.register_form.password.value;
-  const regFirstname = /^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]){3,13}\b/;
-  const regLastname = /^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ.'-]){3,20}\b/;
-  const regMail = /^([a-z0-9_.-]+@[a-z0-9_.-]+\.[a-z]{2,4})/;
-  const regPassword = /^([a-zA0-9]){8,}\b/;
+$('p.invalid_feedback').hide();
 
-  if (/* name === null || */ regFirstname.test(firstname) === false) {
-    alert('Fill correct name-only letters is ok');
-    return false;
-  } if (/* surname === null || */ regLastname.test(lastname) === false) {
-    alert('Fill correct surname-only letters is ok');
-    return false;
-  } if (mail === null || regMail.test(mail) === false) {
-    alert('Fill correct email - should contain: "@" and "."');
-    return false;
-  } if (regPassword.test(password) === false) {
-    alert('The password should have 8 characters');
-    return false;
+function invalidFeedback() {
+  const htmlElement = $(this);
+  const inputValue = htmlElement.val();
+  const pattern = htmlElement.attr('pattern');
+  const regPattern = new RegExp(pattern);
+
+  if (htmlElement.attr('id') === 'confirm_password') {
+    if ($('#password').val() !== $(this).val()) {
+      $(this).next().show();
+    } else {
+      $(this).next().hide();
+    }
+  } else if (inputValue !== null && regPattern.test(inputValue) === false) {
+    htmlElement.next().show();
+    $('.form_field_login').css('margin-bottom', '10px');
+    $('div.form_field_login').css('margin-top', '30px');
+  } else {
+    htmlElement.next().hide();
+    $('div.form_field_login').css('margin-top', '5px');
   }
-  return true;
 }
 
-$('#button_register').on('click', () => {
-  
-  if (validateForm() === true) {
-  } else {
+$('input').on('blur', invalidFeedback);
+
+$('#button_register').on('click', (event) => {
+  let a = false;
+  $('.invalid_feedback').each(function () {
+    if ($(this).css('display') === 'block') {
+      a = true;
+    }
+  });
+
+  let b = false;
+  $('input').each(function () {
+    if ($(this).val() === '') {
+      b = true;
+    }
+  });
+
+  if (a || b) {
     alert('Please fill correct data');
+    event.preventDefault();
   }
 });
-
-

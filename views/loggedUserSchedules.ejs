@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <%- include('partials/head'); %>
+    <title>Schedules for logged user</title>
   </head>
   <body>
     <%- include('partials/navLogout'); %>
@@ -68,9 +69,10 @@
       <table class="center">
         <thead>
           <tr id="user_data">
-            <th><%=userData.firstname %></th>
-            <th><%=userData.lastname %></th>
-            <th><%=userData.email %></th>
+            <th colspan="5"> User name: <%=userData.firstname %> <%=userData.lastname %></th>
+          </tr>
+          <tr id="user_data">
+            <th colspan="5">Email: <%=userData.email %></th>
           </tr>
           <tr>
             <th>Day</th>
