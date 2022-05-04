@@ -1,0 +1,868 @@
+html, body {
+     height: 100%;
+	text-align:center;
+  }
+
+#container {
+	width: 1440px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	margin-bottom: 142px;
+	}
+
+#container_about {
+	width: 1440px;
+	height: 2118px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	background-color: white;
+
+	align-items: flex-end;
+	}
+
+nav {
+	background-color: #6A7B8B;
+	height: 80px;
+	width: 1440px;
+	font-family: 'Archivo Narrow-bold', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	background-image: url("assets/full_logo_white.png");
+	background-repeat: no-repeat;
+	background-position: 40px 11px;
+	background-size: 157px 56px;
+	position: absolute; top: 0;
+	display: block;
+}
+
+li {
+	background-color: #6A7B8B;
+}
+ul, ul li {
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	padding: 10px 40px;
+	align-items: center;
+	
+}
+
+
+ul a:link, ul a:visited {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	height: 60px;
+	padding: 10px 40px;
+	color: white;
+}
+
+ul a:hover {
+	color: white;
+}
+
+
+
+div#mr_coffee_logo {
+	width: 207px;
+	height: 207px;
+	background-image: url("assets/logo_mrcoffee.png");
+	background-repeat: no-repeat;
+	background-size: 207px 207px;
+	display: block;
+	margin: auto;
+}
+
+#mr_coffee_salle {
+	width: 1247px;
+	height: 795px;
+	background-image: url("assets/mr_coffee_salle.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 82px;
+	
+}
+
+
+h1 {
+	text-align: center;
+	font-family: "AvenirNext-Bold", sans-serif; 
+	font-size: 40px;
+	color: white;
+	text-shadow: 0px 4px 8px black;
+	margin: auto;
+	padding-top: 80px;
+	width: 689px;
+	height: 55px;	
+}
+
+.login_h1 {
+	margin-left: 375px;
+	margin-top: 50px;
+}
+
+h2 {
+	font-family: "AvenirNext-Medium", sans-serif; 
+	font-size: 40px;
+	color: #5C5B5B;
+	text-align: center;
+		
+}
+h3 {
+	text-align: center;
+	font-family: 'AvenirNext -bold', sans-serif; 
+	font-size: 36px;
+	color: #5C5B5B;
+	
+}
+
+h4 {
+	text-align: center;
+	font-family: 'AvenirNext -bold', sans-serif; 
+	font-size: 24px;
+	color: white;
+	text-shadow: 0px 1px 4px black;
+	width: 320px;
+	height: 44px;	
+	vertical-align: text-top;
+	margin: auto;
+	margin-top: 31px;
+}
+ 
+ article#info h2 {
+	width: 994px;
+	height: 122px;
+	text-shadow: 0px 2px 4px #979797;
+	margin: auto;
+	padding-top: 0px;
+	flex: 1 0 100%;
+
+}
+#content {
+	/*position: absolute;
+	top: 80px;*/
+	flex: 1;
+	flex-wrap: wrap;
+    flex-direction: row;
+	align-items: center;
+	justify-content: center; 	
+	margin: auto;
+	margin-top: 80px;
+	display:block;
+	width: 100%;
+	height: 2925px;
+}
+
+#content_contact {
+	
+	flex: 1;
+    flex-direction: column;
+	align-items: center;
+	justify-content: center; 	
+	margin: auto;
+	margin-top: 80px;
+	display: block;
+}
+
+#content_about {
+	
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 80px;	
+	padding-left: 69px;
+	padding-right: 84px;
+	
+}
+
+article#info {
+	display: flex;
+	flex-wrap: wrap;
+    flex-direction: row;
+	align-items: center;
+	justify-content: center; 	
+	margin: auto;
+}
+	
+article#progamme h2{
+	text-align: center;
+	font-weight: Bold;
+	text-shadow: 0px 2px 4px #979797;
+	width: 994px;
+	height: 55px;
+	padding-top: 0px;
+	flex: 1 0 100%;
+	margin-top: 88px;
+}
+
+article#progamme {
+	display: flex;
+	flex-wrap: wrap;
+    flex-direction: row;
+	align-items: center;
+	justify-content: center; 	
+	margin: auto;
+}
+#icon_open{
+	background-image: url("assets/icon_open.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 107px;
+	height: 107px;
+	margin-left: 142px;
+	margin-top: 75px;
+	margin-right: 38px;
+	
+}
+
+#info_about_open{
+	width: 406px;
+	height: 55px;
+	flex: 2 0 70%;
+	font-family: 'AvenirNext-Medium', sans-serif; 
+	font-size: 26px;
+	color: #5C5B5B;
+	margin-top: 131px;
+}
+section {
+	background-color: #6A7B8B;
+	opacity: 0.45;
+	width: 386px;
+	height: 418px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #979797;
+	box-shadow: 0px 2px 4px black;
+	margin: 20px;
+	display: inline-block;
+		
+}
+
+#le_bon_café {
+		background-image: url("assets/icon_café.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 122px;
+	height: 122px;
+	margin: auto;
+	margin-top: 44px;
+}
+
+#les_gens {
+		background-image: url("assets/icon_gens.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 122px;
+	height: 122px;
+	margin: auto;
+	margin-top: 44px;
+}
+
+#les_histoires {
+	background-image: url("assets/icon_histoires.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 122px;
+	height: 122px;
+	margin: auto;
+	margin-top: 44px;
+}
+
+
+.trois_choses  {
+	text-align: center;
+	font-family: 'AvenirNext-Bold', sans-serif; 
+	font-size: 16px;
+	color: white;
+	width: 298px;
+	height: 132px;
+	margin: auto;
+	margin-top: 17px;
+}
+
+.mardis {
+	
+	width: 545px;
+	height: 350px;
+	font-family: 'AvenirNext-Medium', sans-serif; 
+	font-size: 26px;
+	color: #5C5B5B;
+	text-align: center;
+	vertical-align: text-top;
+	padding: 0px 68px;
+
+}
+
+.jeudis {
+
+	width: 545px;
+	height: 350px;
+	font-family: 'AvenirNext-Medium', sans-serif; 
+	font-size: 26px;
+	color: #5C5B5B;
+	text-align: center;
+	vertical-align: text-top;
+	flex: inline-block;
+	padding: 0px 89px 0px 68px;
+}
+
+.jeudis + div {
+	font-family: 'AvenirNext-Medium', sans-serif; 
+	font-size: 26px;
+	color: #5C5B5B;
+	flex: 4 0 100%;	
+	text-align: center;
+	padding-bottom: 141px;
+}
+
+.jeudis + div p {
+	width: 839px;
+	height: 104px;
+	text-align: center;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+.jeudis + div p + p {
+	font-size: 32px;
+	width: 839px;
+	height: 150px;
+	text-align: center;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.socials a.soc-linkedin {
+	background-image: url("assets/logo_linkedin.png");
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+	margin: 10px 15px;
+	
+}
+
+.socials a.soc-twitter {
+	background-image: url("assets/logo_twitter.png");
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+	margin: 10px 15px;
+}
+
+.socials a.soc-facebook {
+	background-image: url("assets/logo_facebook.png");
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover;
+	width: 25px;
+	height: 25px;
+	margin: 10px 15px;
+}
+div.socials {
+	margin: auto;
+	padding: 24px 0px;
+}
+.socials a {
+	display: inline-block;
+}
+
+div#soc {
+	width: 298px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center; 	
+	margin: auto;
+}
+
+
+a#button_En_savoir_plus {
+	text-align:center;
+	flex: 3 0 100%;
+	padding-top: 92px;
+}
+
+button.button_boxGray {
+	font-family: 'AvenirNext-Bold', sans-serif; 
+	font-size: 26px;
+	color: white;
+	background-color: #6A7B8B;
+	border-radius: 10px;
+	width: 332px;
+	height: 77px;
+	
+}
+
+.button_boxGray_small {
+	font-family: 'AvenirNext-Bold', sans-serif; 
+	font-size: 26px;
+	color: white;
+	background-color: #6A7B8B;
+	border-radius: 10px;
+	width: 220px;
+	height: 60px;
+	margin: auto;
+	
+}
+
+#button_register {
+	margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h2.contact_heading {
+	text-align: center;
+	width: 458px;
+	height: 78px;
+	margin: auto;
+	display: block;
+	margin-top: 37px;
+	
+}
+
+.grayBox_contact_form {
+	width: 810px;
+	height: 719px;
+	background-color: white;
+	margin-bottom: 124px;
+	text-align: left;
+	margin-left: 315px;
+	
+}
+div.icon_user{
+	margin-left: 660px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 120px;
+	height: 120px;
+}
+
+.icon_user_plus {
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 120px;
+	height: 120px;
+}
+
+#user_plus_register {
+	margin-left: 650px;
+}
+
+.grayBox_form {
+	width: 810px;
+	height: 300px;
+	background-color: white;
+	margin-left: 315px;
+
+}
+a.createAccountlink {
+	font-family: 'AvenirNext-Bold', sans-serif; 
+	font-size:larger; 
+	text-decoration: none; 
+	text-align: center; 
+	cursor: pointer;
+	color:#5C5B5B; 
+
+}
+
+#grayBox_form_register{
+	height: auto;
+	margin-bottom: 20px;
+	
+}
+
+label.name_of_field {
+	font-family: 'AvenirNext-Bold', sans-serif; 
+	font-size: 26px;
+	color: #5C5B5B;
+	
+
+}
+
+div.form_field_login{
+	width: 404px;
+	height: 110px;
+	margin: auto;
+	margin-bottom: 5px;
+
+}
+input {
+	width: 100%;
+	height: 100%;
+	background-color: #6A7B8B;
+	color: white;
+	font-family: 'AvenirNext', sans-serif; 
+	font-size: 22px;
+	font-weight: bold
+
+}
+.form_input_field {
+	width: 808px;
+	height: 56px;
+	background-color: #6A7B8B;
+	opacity: 0.35;
+	border-style: solid;
+	border-width: 1px;
+	outline-width: 1px solid #979797;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border: 5px;	
+}
+.form_input_field_medium {
+	width: 404px;
+	height: 56px;
+	background-color: #6A7B8B;
+	opacity: 0.35;
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 1px;
+	outline-width: 1px solid #979797;	
+}
+
+.form_input_field_small{
+	width: 240px;
+	height: 56px;
+	background-color: white;
+	border-radius: 5px;
+	margin: 10px 20px 10px 0px;
+	outline-width: 1px solid #979797;
+	color: #6A7B8B;
+
+}
+
+#message{
+	height: 158px;
+	color: white;
+	font-family: 'AvenirNext', sans-serif; 
+	font-size: 22px;
+	font-weight: bold
+}
+
+p.invalid_feedback {
+	color: red;
+	font-family: 'AvenirNext', sans-serif; 
+	font-size: 17px;
+	font-weight: bold;
+	
+}
+
+.modal {
+	display: none; 
+    position: fixed;
+	padding-top: 555px; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal_content {
+	width: 1242px;
+	height: 608px;
+	border-style: solid;
+	border-width: 1px;
+	outline-width: 1px solid #979797;
+	background-color: #FCFCFC;
+	text-align: center;
+	margin: auto;
+}
+
+.modal_header {
+	margin-top: 106px;
+	margin-bottom: 66px;
+	float:left;
+	text-align: center;
+	width: 100%;
+	border-right: 137px;
+}
+
+.modal_header #logo_dark {
+	width: 93px;
+	height: 137px;
+	background-image: url("assets/logo_dark.png");
+	background-repeat: no-repeat;
+	margin-left: 102px;
+	background-size: 93px 137px;
+	float:left;
+  	
+}
+
+.modal_header h3 {
+	margin-left: 195px;
+	margin-right: 195px;
+}
+
+.modal_footer {
+	margin-bottom: 91px;
+}
+
+.modal_body { 
+	clear: both;
+	text-align: left;
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size: 24px;
+	margin-left: 251.5px;
+	height: 125px;
+	
+}
+
+table, th, td {
+	
+	border-width: 1px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	width: 1200px;
+	border-collapse: collapse;
+	margin-right: 20px;
+	
+  }
+  table.center {
+	margin: auto;
+	text-align: left;
+	margin-bottom: 40px;
+	margin-top: 40px;
+	
+  }
+  table thead {
+	color: #FCFCFC;
+	font-size: 16px;
+	font-family: "AvenirNext-Medium", sans-serif; 
+	background-color: #6A7B8B;
+  }
+
+  th, td {
+	padding: 10px;
+  }
+
+  td {
+	  text-align: left;
+	  border-bottom:solid #6A7B8B ;
+  }
+
+  tr#user_data {
+	color: #6A7B8B;
+	background-color: white;	
+}
+  a#my_schedules {
+	text-decoration: none;
+	text-align: left;
+	background-color: #f44336;
+	font-family: "AvenirNext-Medium", sans-serif;
+	color: white;
+	padding: 11px 25px;
+	margin-bottom: 20px;
+	}
+a#delete_schedule, #update_schedule {
+	text-decoration: none;
+	color: #6A7B8B 
+} 
+div.icon_calendar {
+	width: 1000px;
+	text-align: left;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+section.schedules_of_logged_user, section.new_schedules_of_logged_user, section.schedules_all_users {
+	
+	width: 1400px;
+	height: auto;
+	background-color: white;
+	margin: 20px;
+	opacity: 1;
+	display: block;
+}
+form#add_schedule_form{
+	text-align: initial;
+    height: auto;
+    display: inline-flex;
+    width: 1370px;
+    margin: auto;
+}
+
+#button_add_schedule {
+	margin: auto;
+	width: 320px;
+	height: 60px;
+	margin-top: 36px;
+
+
+}
+
+#add_my_schedules {
+	cursor:pointer;
+	text-decoration: none;
+	background-color: #f44336;
+	font-family: "AvenirNext-Medium", sans-serif;
+	color: white;
+	padding: 11px 25px;
+	display:table;
+	margin: 20px;
+}
+
+#add_schedule_form.form_field_schedule {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+address {
+	text-align: left;
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size: 26px;
+	font-weight: medium;
+	font-style: normal;
+	color: #5C5B5B;
+	width: 424px;
+	height: 257px;
+	display: block;
+	margin-right: auto;
+	margin-left: 315px;
+	margin-top: 68px;
+	margin-bottom: 68px;
+}
+
+#img_map {
+	background-image: url("assets/carte_contact.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 810px;
+	height: 608px;
+	margin: auto;
+	display: block;
+	margin-bottom: 68px;
+}
+
+
+.content_about h2 {
+	text-align: left;
+	width: 564px;
+	height: 165px;
+	position: absolute;
+	top: 403px;
+	left: 69px;
+	display: block;
+}
+
+#content_about p {
+	text-align: left;
+	font-family: 'AvenirNext-Bold', sans-serif; 
+	font-size: 24px;
+	color: #5C5B5B;
+	display: block;
+}
+#content_about #mr_coffee_logo {
+	background-position: center;
+	flex: 1 0 100%;
+}
+
+#about_left {
+	display: block;
+	width: 658px;
+	height: 756.42px;
+	flex: 2 0 50%;
+}
+
+#about_left p {
+	width: 658px;
+	height: 419px;
+	
+}
+
+#trois_cafés {
+	background-image: url("assets/trois_cafés.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 505px;
+	height: 756.42px;
+}
+
+
+#content_about h2 {
+	text-align: left;
+	width: 564px;
+	height: 165px;
+	display: block;
+}
+
+#about_right {
+	display: block;
+	width: 658px;
+	height: 612.48px;
+	flex: 3 0 50%;
+}
+
+#about_right p {
+	width: 658px;
+	height: 479px;
+}
+
+#mrcoffee_salle2{
+	background-image: url("assets/mrcoffee_salle2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 535px;
+	height: 612.48px;
+	margin-right: 54px;
+	display: block;
+	
+}
+
+
+footer {
+	/*clear: both;
+	display: block;
+	position: fixed;*/
+	bottom: 0px;
+	text-align: center;
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size: 16px;
+	width: 1440px;
+	height: 142px;
+	background-color: #6A7B8B;
+	color: white;
+	background-image: url("assets/logo_blanc.png");
+	background-repeat: no-repeat;
+	background-size: 53px 78px;
+	background-position: 50px 32px;
+	/*vertical-align: text-bottom;*/
+
+}
+
+@media screen and (max-width: 600px) {
+	article#info { flex-direction: column; }
+	article#progamme { flex-direction: column;}
+	ul, ul li {flex-direction: column; }
+	ul {margin-top:80px;} 
+	#content {top: 320px;}
+	#content_contact {top: 320px;}
+	}

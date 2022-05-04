@@ -1,0 +1,82 @@
+{
+  "name": "fontello",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "31972e4e9d080eaa796290349ae6c1fd",
+      "css": "users",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "8b80d36d4ef43889db10bc1f0dc9a862",
+      "css": "user",
+      "code": 59393,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "1bafeeb1808a5fe24484c7890096901a",
+      "css": "user-plus",
+      "code": 62004,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "fb1c59faa93eb6e2248c2456625b08a2",
+      "css": "user-times",
+      "code": 62005,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "531bc468eecbb8867d822f1c11f1e039",
+      "css": "calendar",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "076f940ac56adee91dd43d6fd77dd0cf",
+      "css": "user-add",
+      "code": 59395,
+      "src": "typicons"
+    },
+    {
+      "uid": "bczb7qup4axmc490xmuuv8qdhcnbgeyf",
+      "css": "user-1",
+      "code": 59396,
+      "src": "typicons"
+    },
+    {
+      "uid": "56a0672588820ab1a16363e5d07dd22e",
+      "css": "user-2",
+      "code": 59401,
+      "src": "linecons"
+    },
+    {
+      "uid": "2cc73cc335f054682c04fe63439c4dcb",
+      "css": "trash-2",
+      "code": 59402,
+      "src": "linecons"
+    },
+    {
+      "uid": "2aeb4987b469d22fcb8b471b6d2cdfff",
+      "css": "pencil-1",
+      "code": 59398,
+      "src": "linecons"
+    },
+    {
+      "uid": "43e4647c57186b5e06874621b5e665be",
+      "css": "calendar-1",
+      "code": 59403,
+      "src": "linecons"
+    },
+    {
+      "uid": "c64623255a4a7c72436b199b05296c4f",
+      "css": "emo-happy",
+      "code": 59397,
+      "src": "fontelico"
+    }
+  ]
+}

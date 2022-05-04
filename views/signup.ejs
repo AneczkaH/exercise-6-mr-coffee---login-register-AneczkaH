@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); %>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <%- include('partials/nav'); %>
+    <h1 class="login_h1"><%=welcomeText %></h1>
+
+    <p><%= errorText%></p>
+
+    <div class="icon_user_plus" id="user_plus_register">
+      <i class="icon-user-plus"></i>
+    </div>
+
+    <form
+      class="grayBox_form"
+      id="grayBox_form_register"
+      action="/signup"
+      name="register_form"
+      method="POST"
+    >
+      <div class="form_field_login">
+        <label for="firstname" class="name_of_field"> FIRST NAME * </label>
+        <input
+          type="text"
+          class="form_input_field_medium"
+          id="firstname"
+          name="firstname"
+          maxlength="13"
+          pattern="^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]){3,13}\b"
+          required
+        />
+        <p class = "invalid_feedback">Fill correct name! Only letters are ok</p>
+      </div>
+
+      <div class="form_field_login">
+        <label for="lastname" class="name_of_field">LAST NAME * </label>
+        <input
+          type="text"
+          class="form_input_field_medium"
+          id="lastname"
+          name="lastname"
+          maxlength="20"
+          pattern = "^([a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ.'-]){3,20}\b"
+          required
+        />
+        <p class = "invalid_feedback">Fill correct lastname! Only letters and ".'-" are ok</p>
+      </div>
+
+      <div class="form_field_login">
+        <label for="email" class="name_of_field"> ADRESS E-MAIL * </label>
+        <input
+          type="email"
+          class="form_input_field_medium"
+          id="email"
+          name="email"
+          pattern="^([a-z0-9_.-]+@[a-z0-9_.-]+\.[a-z]{2,4})"
+          required
+        />
+        <p class = "invalid_feedback">Fill correct email - should contain: min 6 characters, "@" and "."</p>
+      </div>
+
+      <div class="form_field_login">
+        <label for="password" class="name_of_field"> PASSWORD * </label>
+        <input
+          type="password"
+          class="form_input_field_medium"
+          id="password"
+          name="password"
+          pattern="^([a-zA0-9]){8,}\b"
+          required
+        />
+        <p class = "invalid_feedback">The password should have 8 characters</p>
+      </div>
+
+      <div class="form_field_login">
+        <label for="confirm_password" class="name_of_field">
+          CONFIRM PASSWORD *
+        </label>
+        <input
+          type="password"
+          class="form_input_field_medium"
+          id="confirm_password"
+          name="confirm_password"
+          required
+        />
+        <p class = "invalid_feedback">The password should be the same!</p>
+      </div>
+
+      <button type="submit" class="button_boxGray_small" id="button_register">
+        REGISTER
+      </button>
+    </form>
+
+    <%- include('partials/footer'); %>
+    <script src="/scripts/jquery/dist/jquery.js"></script>
+    <script src="/formSignUp.js"></script>
+  </body>
+</html>

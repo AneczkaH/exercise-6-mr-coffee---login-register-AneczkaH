@@ -1,0 +1,43 @@
+{
+  "name": "exercise-5-mr-coffee---expressjs-db-aneczkah",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pl-incode/exercise-5-mr-coffee---expressjs-db-AneczkaH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pl-incode/exercise-5-mr-coffee---expressjs-db-AneczkaH/issues"
+  },
+  "homepage": "https://github.com/pl-incode/exercise-5-mr-coffee---expressjs-db-AneczkaH#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.16",
+    "prettier": "2.6.2",
+    "minimist": ">=1.2.6"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "crypto-js": "^4.1.1",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.5",
+    "jquery": "^3.6.0",
+    "pg": "^8.7.3",
+    "save": "^2.5.0",
+    "minimist": ">=1.2.6"
+  }
+}

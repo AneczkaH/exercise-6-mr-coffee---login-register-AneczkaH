@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); %>
+    <title>User schedules</title>
+  </head>
+  <body>
+    <%- include('partials/navLogout'); %>
+
+    <h1 class="login_h1">
+      <%=welcomeText %> <%=userSchedules[0].firstname%>
+      <%=userSchedules[0].lastname%>
+    </h1>
+    <section class="schedules_all_users">
+      <table class="center">
+        <thead>
+          <tr id="user_data">
+            <th colspan="3"> User name: <%=userSchedules[0].firstname%>
+               <%=userSchedules[0].lastname%> </th>
+          </tr>
+          <tr id="user_data">
+            <th colspan="3"> E-mail: <%=userSchedules[0].email %></th>
+          </tr>
+          <tr>
+            <th>Day</th>
+            <th>Start at</th>
+            <th>End at</th>
+          </tr>
+        </thead>
+        <% userSchedules.forEach(function(schedule) { %>
+        <tr>
+          <td><%= schedule.day %></td>
+          <td><%=schedule.start_at %></td>
+          <td><%=schedule.end_at %></td>
+        </tr>
+        <% }); %>
+      </table>
+    </section>
+
+    <%- include('partials/footer'); %>
+  </body>
+</html>
