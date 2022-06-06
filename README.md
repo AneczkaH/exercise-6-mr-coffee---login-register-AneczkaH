@@ -76,16 +76,16 @@ Project is in progress.
 ## Room for Improvement
 
 Can add: 
-displaying the schedule with the name of the days
-automation tests - e2e tests in Cypress or jest 
-schedule update possible
-Swagger - an API specification 
+- displaying the schedule with the name of the days
+- automation tests - e2e tests in Cypress or jest 
+- schedule update possible
+- Swagger - an API specification 
 
 can correct:
-design
-project structure
-Error Handling
-add new features
+- design - frontend
+- project structure
+- Error Handling
+- add new features
 
 
 ## Contact
